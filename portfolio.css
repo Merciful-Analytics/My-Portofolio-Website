@@ -53,19 +53,24 @@ nav {
   color: #FA614F;
 }
 
-.contact {
+.btn {
   background-color: #FA614F;
   padding: 10px 20px;
   border-radius: 12px;
 }
 
-.contact:hover {
+.btn:hover {
   background-color: #8602D1;
 }
 
 .btn {
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.fa-bars{
+    /* display: none; */
+    visibility: hidden;
 }
 
 .hero {
@@ -192,14 +197,32 @@ footer {
 
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1em;
   }
 
-  .list {
+  .name{
+    font-size: 1.4em;
+  }
+
+  .list{
+    display:none;
+  }
+
+  .btn{
+    display:none;
+  }
+
+   .fa-bars{
+        visibility: visible;
+        font-size: 2em;
+    
+   }
+
+  /* .list {
     flex-direction: column;
     gap: 0.8em;
-  }
+  } */
 
   .hero {
     padding: 80px 5%;
@@ -212,6 +235,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .name{
+    font-size: 1em;
+  }
+
+  .fa-bars{
+    font-size: 1.4em;
+  }
+  
   .content h1 {
     font-size: 1.6em;
   }
