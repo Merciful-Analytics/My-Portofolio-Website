@@ -240,6 +240,7 @@ footer {
   }
 
   .fa-bars{
+    visibility:visible;
     font-size: 1.4em;
   }
   
