@@ -17,6 +17,46 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', toggleMenu);
   });
 
+
+  // Certificate Slideshow
+(function () {
+  const slides = document.querySelectorAll('.cert-slide');
+  const dotsContainer = document.querySelector('.cert-dots');
+  const prevBtn = document.querySelector('.cert-prev');
+  const nextBtn = document.querySelector('.cert-next');
+
+  if (!slides.length) return;
+
+  let current = 0;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('cert-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.cert-dot');
+
+  function goToSlide(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(current - 1));
+  nextBtn.addEventListener('click', () => goToSlide(current + 1));
+
+  // Auto-play every 5 seconds
+  setInterval(() => goToSlide(current + 1), 8000);
+})();
+
   // Contact Form Submission (Mailto fallback)
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
