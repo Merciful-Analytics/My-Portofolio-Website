@@ -298,6 +298,7 @@ h4,
 
 .lead-text {
   font-size: 1.25rem;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
   color: var(--text-main);
   font-weight: 500;
@@ -305,29 +306,25 @@ h4,
 
 .body-text {
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;   /* was 2.5rem, too big between paragraphs */
   font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.body-text strong {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .metrics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  border-top: 1px solid var(--border-light);
-  padding-top: 2rem;
+  margin-top: 2rem;         /* space above the divider line */
 }
 
-.metric-value {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.metric-label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+/* Optional: keep the title in view while reading */
+.split-left {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
 }
 
 /* Skills Section */
